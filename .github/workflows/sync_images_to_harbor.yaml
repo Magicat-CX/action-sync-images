@@ -17,6 +17,9 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Harbor
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/events:v0.56.5 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/pipeline/cmd/events:v0.56.5
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/resolvers:v0.56.5 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/pipeline/cmd/resolvers:v0.56
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook:v0.56.5 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/pipeline/cmd/webhook:v0.56.5
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.26.2
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.26.2
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.26.2
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.26.2
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.32.0 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.32.0
+        
