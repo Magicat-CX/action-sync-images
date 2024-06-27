@@ -17,9 +17,7 @@ jobs:
     - name: Use Skopeo Tools Sync Image to Harbor
       run: |
         #!/usr/bin/env bash
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/controller:v0.26.2
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/eventlistenersink:v0.26.2
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/webhook:v0.26.2
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.26.2 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/triggers/cmd/interceptors:v0.26.2
-        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.io/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.32.0 docker://harbor.flamelephant.com/devops/tekton-releases/github.com/tektoncd/dashboard/cmd/dashboard:v0.32.0
-        
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://docker.io/library/maven:3-eclipse-temurin-8-focal docker://harbor.flamelephant.com/devops/maven:3-eclipse-temurin-8-focal
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://docker.io/alpine/git:v2.36.1 docker://harbor.flamelephant.com/devops/alpine/git:v2.36.1
+        skopeo copy --dest-creds ${{ secrets.HARBOR_CRED }} docker://gcr.dockerproxy.com/kaniko-project/executor:latest docker://harbor.flamelephant.com/devops/kaniko-project/executor:latest
+
